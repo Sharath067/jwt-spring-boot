@@ -16,7 +16,11 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Winz API").version("1.0"))
+                .info(new Info()
+                        .title("Winz API")
+                        .version("1.0")
+                        .description("Winz Ecommerce Authentication & API Docs")
+                )
                 .components(new Components()
                         .addSecuritySchemes(SECURITY_SCHEME_NAME,
                                 new SecurityScheme()
