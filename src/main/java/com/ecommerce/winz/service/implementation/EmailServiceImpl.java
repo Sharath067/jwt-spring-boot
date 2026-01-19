@@ -28,7 +28,7 @@ public class EmailServiceImpl implements EmailService {
             String html = templateEngine.process("welcome-email", context);
             sendHtmlMail(to, "Welcome to Winz Ecommerce", html);
         } catch (Exception e) {
-            System.err.println("❌ Welcome email failed: " + e.getMessage());
+            System.err.println("Welcome email failed: " + e.getMessage());
         }
     }
 
@@ -43,7 +43,7 @@ public class EmailServiceImpl implements EmailService {
             String html = templateEngine.process("reset-password", context);
             sendHtmlMail(to, "Password Reset", html);
         } catch (Exception e) {
-            System.err.println("❌ Reset password email failed: " + e.getMessage());
+            System.err.println("Reset password email failed: " + e.getMessage());
         }
     }
 
@@ -58,10 +58,10 @@ public class EmailServiceImpl implements EmailService {
 
             mailSender.send(message);
 
-            System.out.println("✅ Email sent to " + to);
+            System.out.println("Email sent to " + to);
         } catch (Exception e) {
             // VERY IMPORTANT → Never throw
-            System.err.println("❌ Email sending failed: " + e.getMessage());
+            System.err.println("Email sending failed: " + e.getMessage());
         }
     }
 }
